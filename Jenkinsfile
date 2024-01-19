@@ -8,10 +8,8 @@ pipeline {
     stages {
         stage('Checkout SCM'){
             steps{
-                script{
-                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/batchusivaji/projects.git']])
-                }
-            }
+                git url: 'https://github.com/RAJAKUMARASWAMI/projects.git' ,
+                    branch: 'main'
         }
         stage('intializing terraform'){
             steps{
